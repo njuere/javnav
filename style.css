@@ -5,36 +5,23 @@
 }
 header{
     width: 100%;
-    height: 120vh;
     margin: 0;
     padding: 0;
     background-color: rgba(247, 240, 247, 0.857);
 }
-.bar{
-    padding-top: 15px;
-    width: 70%;
-    margin: auto;
-    display: none;
-}
-.bar .top{
-    display: flex;
-    justify-content: space-between;
-}
-.top .rightt{
-    display: flex;
-    gap: 10px;
-}
+
 nav{
     width: 85%;
     margin: auto;
     display: flex;
-     justify-content: space-between; 
+    justify-content: space-between; 
     align-items: center;
     padding-top: 25px;
     padding-bottom: 15px;
 }
 
-.menu{
+.menu,
+.close{
     display: none;
 }
 .mid, 
@@ -47,6 +34,9 @@ nav{
 .end a{
     text-decoration: none;
     color: gray;
+}
+#products{
+    cursor: pointer;
 }
 .end a.free{ 
     border-radius: 4px;
@@ -65,19 +55,20 @@ nav{
     width: 60%;
     z-index: 0;
 }
-.landing-page .tribox{
+.tribox{
     display: none;
-    margin-top: -430px;
-}
-.landing-page .box{
+ }
+.box{
     background-color: white;
     width: 31%;
     height: 36%;
-    margin-left: 226px;
     z-index: 10;
     border-radius: 10px;     
     padding-bottom: 50px;
     position: absolute;
+    top: 80px;
+    left: 326px;
+
 }
 
 .triangle{
@@ -86,9 +77,11 @@ nav{
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	border-bottom: 10px solid white;
-    margin-left: 370px;
-    margin-top: -60px;
+    margin-left: 470px;
+    margin-top: -15px;
     box-sizing: border-box;
+    position: absolute;
+    
 }
 .responsive{
     display: none;
@@ -213,47 +206,90 @@ section .spot{
     gap: 60px;
 }
 
-footer{
-    display: none;
-    padding: 10px;
+/* tablet */
+@media only screen and (max-width:1000px) {
+  header{
+    height:100vh ;
     width: 100%;
-    background-color: rgb(232, 230, 229);
+  }
+  .nav{
+    width: 85%;
+    padding-top: 35px;
+  }
+  .mid,
+  .end{
+    font-size: 15px;
+  } 
+  .landing-page{
+    padding-top: 20px;
+  }
+  .box{
+    left: 60px;
+    width: 50%;
+    height: 24.5%; 
+  }
+  .triangle{
+    margin-left: 200px;
+  }
+  .tritext{
+    padding-top: 20px;
+  }
+  .box .spense p,
+  .box .fiber p,
+  .box .gradie p{
+    font-size: 17px;
+  }
+  .box .spense h4,
+  .box .fiber h4,
+  .box .gradie h4{
+    font-size: 20px;
+  }
+  .textt h1,
+  .textt  h1 span{
+    font-size: 50px;
+  }
+  .textt p{
+    font-size: 22px;
+  }
+  .right .image{
+    margin-left: 10px;
+  }
+  .image img{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+  }
+  section p{
+    font-size: 24px;
+  }
+  section .icons{
+    display: block;
+    width: 100%;
+  }
+  section .net,
+  section .spot{
+    width: 100%;
+    
+  }
+  section .net .img,
+  section .spot .img{
+    width: 50%;
 }
-footer .code{
-    width: 75%;
-    margin: auto;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 25px;
-    background-color: white;
+  section .net .img img,
+  section .spot .img img{
+    width: 100%;
 }
-footer .codend{
-    width: 70%;
-    margin: auto;
-    border-radius: 0px;
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 25px;
-    color: rgb(9, 114, 219);    
-}
-footer .line{
-    width: 32%;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
+
 }
 
 /* mobile */
-@media screen and (max-width: 1000px){
+@media only screen and (max-width: 640px){
    header{
     height: 100vh;
     max-width: 100%;
     
    }
-   .bar{
-    display: block;
-   }
+   
    #links{
     display: none;
    }
@@ -265,13 +301,17 @@ footer .line{
     margin-top: -398px;
     margin-left: -234px;
    }
-   .landing-page .box{
+   .box{
     width: 90%;
-    margin-top: 25px;
-    /* position: relative; */
+    height: 43%;
+    left: 17px;
+    margin: auto;
    }
    .triangle{
     display: none;
+   }
+   .tritext{
+    margin-top: -10px;
    }
    .landing-page .left{
     width: 100%;
@@ -288,13 +328,13 @@ footer .line{
     font-size: 35px;
    }
    .textt p{
-    font-size: 14px;
+    font-size: 16px;
    }
   section{
     padding-top: 40px;
   }
   section p{
-    font-size: 14px;
+    font-size: 16px;
   }
   section .icons{
     display: block;
@@ -302,12 +342,16 @@ footer .line{
   }
   section .net,
   section .spot{
-    width: 50%;
-    display: flex;
+    width: 100%;
+    
     padding-bottom: 10px;
 }
-section .net img,
-section .spot img{
+section .net .img,
+section .spot .img{
+    width: 50%;
+}
+section .net .img img,
+section .spot .img img{
     width: 100%;
 }
 }
